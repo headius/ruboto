@@ -273,9 +273,9 @@ module Ruboto
 
       def check_for_android_sdk
         @android_loc = check_for('android', 'Android Package Installer',
-                                 File.join(android_package_directory, 'tools', windows? ? 'android.bat' : 'android'))
+                                 File.join(android_package_directory, 'platform-tools', windows? ? 'android.bat' : 'android'))
         check_for('sdkmanager', 'Android SDK Manager',
-                                 File.join(android_package_directory, 'tools', 'bin', windows? ? 'sdkmanager.bat' : 'sdkmanager'))
+                                 File.join(android_package_directory, 'platform-tools', 'bin', windows? ? 'sdkmanager.bat' : 'sdkmanager'))
       end
 
       def check_for(cmd, pretty_name=nil, alt_dir=nil)

@@ -89,7 +89,7 @@ module RubotoTest
   puts "ANDROID_OS: #{ANDROID_OS}"
   puts "ANDROID_TARGET: #{ANDROID_TARGET}"
 
-  RUBOTO_CMD = "ruby -rubygems -I #{PROJECT_DIR}/lib #{PROJECT_DIR}/bin/ruboto"
+  RUBOTO_CMD = "ruby -rrubygems -I #{PROJECT_DIR}/lib #{PROJECT_DIR}/bin/ruboto"
 
   RUBOTO_PLATFORM = ENV['RUBOTO_PLATFORM'] || 'CURRENT'
   puts "RUBOTO_PLATFORM: #{RUBOTO_PLATFORM}"
@@ -161,7 +161,7 @@ class Minitest::Test
     raise "Unknown options: #{options.inspect}" unless options.empty?
     raise 'Inclusion/exclusion of libs requires standalone mode.' if (included_stdlibs || excluded_stdlibs) && !standalone
 
-    Dir.mkdir_p TMP_DIR
+    FileUtils.mkdir_p TMP_DIR
 
     FileUtils.rm_rf APP_DIR if File.exist? APP_DIR
     template_dir = "#{APP_DIR}_template_#{$$}"

@@ -25,4 +25,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'minitest', '~>5.5'
   s.add_development_dependency 'rubocop', '~>0.54.0'
+  s.add_development_dependency 'rexml', '~>3.2.5'
 end
